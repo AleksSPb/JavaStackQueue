@@ -1,14 +1,26 @@
+import java.util.EmptyStackException;
 /**
  * Стек: LIFO = Last Input First Output
  */
 public class Stack<T> {
+/**
+ *
+ */
+Element<T> head = null;
+
     /**
      * Добавить на вершину стека
      *
      * @param v значение
      */
-    public void push(T v) {
+    public void push(T value) {
         // TODO: реализовать
+        Element<T> cur = new Element<T>(value);
+        if (head==null) {
+            head=cur; return;}
+        cur.next=head;
+        head=cur;
+        return;
     }
 
     /**
@@ -17,15 +29,26 @@ public class Stack<T> {
      * @return значение
      */
     public T pop() {
+        if (head!=null)
+        {
+            Element<T> cur;
+            cur=head;
+            head=head.next;
+            return cur.value;
+        }
         // TODO: реализовать
-        return null;
+        throw new EmptyStackException();
     }
 
     /**
      * Элемент стека
      */
-    class Element {
+    class Element<T> {
         T value;
-        Element next;
+        Element<T> next=null;
+
+        public Element(T value){
+            this.value=value;
+        }
     }
 }

@@ -14,7 +14,7 @@ public class QueueTest {
      */
     @Test
     public void testStringQueue() {
-        Queue<String> queue = new Queue<>();
+        Queue<String> queue = new Queue<String>();
         queue.put("Hello");
         queue.put("world");
         assertEquals("Hello", queue.get());
@@ -28,7 +28,7 @@ public class QueueTest {
     public void testEmptyQueue() {
         class MyClass {
         }
-        Queue<MyClass> queue = new Queue<>();
+        Queue<MyClass> queue = new Queue<MyClass>();
         queue.get();
     }
 }

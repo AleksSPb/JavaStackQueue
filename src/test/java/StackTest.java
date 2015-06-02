@@ -14,7 +14,7 @@ public class StackTest {
      */
     @Test
     public void testIntStack() {
-        Stack<Integer> stack = new Stack<>();
+        Stack<Integer> stack = new Stack<Integer>();
         stack.push(1);
         stack.push(2);
         stack.push(3);
@@ -28,7 +28,7 @@ public class StackTest {
      */
     @Test
     public void testStringStack() {
-        Stack<String> stack = new Stack<>();
+        Stack<String> stack = new Stack<String>();
         stack.push("Hello");
         stack.push("world");
         assertEquals("world", stack.pop());
@@ -42,7 +42,7 @@ public class StackTest {
     public void testEmptyStack() {
         class MyClass {
         }
-        Stack<MyClass> stack = new Stack<>();
+        Stack<MyClass> stack = new Stack<MyClass>();
         stack.pop();
     }
 }
